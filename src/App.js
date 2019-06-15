@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from axios;
 import logo from './logo.svg';
 import './App.css';
 
@@ -21,6 +22,24 @@ function App() {
       </header>
     </div>
   );
+}
+function scraper() {
+  let test = "";
+  const setup = (obj) => test = obj;
+  const jwplayer = () => {
+    return { setup }
+  };
+  axios.get(`https://www.file-up.org/embed-${url}-1110x500.html`)
+    .then(({ data }) => {
+      let link = "eval(" +
+        data.split("<span id='flvplayer'></span>")[1].split("eval(")[1].split("<\/script>")[0] +
+        "";
+      link = link.replace("return p", `
+        return p;
+        `);
+      eval(link);
+      console.log(test)
+    });
 }
 
 export default App;
