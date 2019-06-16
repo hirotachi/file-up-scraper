@@ -2,13 +2,17 @@ import React from "react";
 import {connect} from "react-redux";
 import InputHandler from "../costumHooks/inputHandler";
 import {startFetchLink} from "../actions/filesActions";
+import {setCurrentFile} from "../actions/currentFileActions";
 
 
 const SearchInput = (props) => {
   const {reset, ...link} = InputHandler("");
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    props.dispatch(startFetchLink(link.value.trim()));
+    const url = link.value.trim();
+    const exists = props.files.find(file => file.link === url);
+
+    props.dispatch(exists ? setCurrentFile(exists) : startFetchLink(url));
     reset();
   };
   return (
@@ -20,5 +24,5 @@ const SearchInput = (props) => {
       </div>
   )
 };
-
-export default connect()(SearchInput);
+const mapStateToProps = (state) => ({files: state.files});
+export default connect(mapStateToProps)(SearchInput);

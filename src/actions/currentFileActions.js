@@ -1,0 +1,1 @@
+export const setCurrentFile = (file) => ({type: "SET_CURRENT", file});
