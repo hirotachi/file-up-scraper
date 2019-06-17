@@ -11,14 +11,10 @@ const SearchInput = (props) => {
     const exists = props.files.find(file => file.link === link);
     props.dispatch(exists ? setCurrentFile(exists) : startFetchLink(link, setError));
   };
-  const test = () => {
-    const link = "https://www.file-up.org/r7v381tggij9";
-    props.dispatch(startFetchLink(link, setError));
-  };
   useEffect(() => {
     let timeout;
     if (error) {
-      setTimeout(() => setError(""), 3000);
+      timeout = setTimeout(() => setError(""), 3000);
     }
     return () => clearTimeout(timeout);
   });
@@ -33,7 +29,6 @@ const SearchInput = (props) => {
             handleSubmit={handleFormSubmit}
             placeholder="your file-up link"
         />
-        <button onClick={test}>test</button>
       </div>
   )
 };

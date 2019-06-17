@@ -1,33 +1,48 @@
-import React, {useEffect, useState} from "react";
+import React, {Component} from "react";
 import {connect} from "react-redux";
 import ReactJwPlayer from "react-jw-player";
 import idGen from "../extra/idGen";
 
-const Player = (props) => {
-  const {downloadLink, image, fileName} = props.currentFile;
-  const [playerId] = useState(idGen());
-  let player;
-  const onReady = () => {
-    player = window.jwplayer(playerId);
+class Player extends Component {
+  state = {
+    playerId: idGen(),
+    player: ""
   };
-  useEffect(() => {
-    if (player) {
-      player.play();
-    }
-  });
-  return (
-      <div style={{width: "50%", height: "50%"}}>
-        <ReactJwPlayer
-            file={downloadLink}
-            playerId={playerId}
-            image={image}
-            onReady={onReady}
-            playerScript="https://cdn.jwplayer.com/libraries/MD5Zj5Ca.js"
-        />
-        <h2>{fileName}</h2>
-      </div>
-  )
-};
+  onReady = () => {
+    const player = window.jwplayer(this.state.playerId);
+    this.setState({player: player});
+  };
 
-const mapStateToProps = (state) => ({currentFile: state.currentFile});
+  shouldComponentUpdate(nextProps, nextState, nextContext) {
+    return this.props.currentFile !== nextProps.currentFile ||
+        this.props.files !== nextProps.files;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const changedCurrentFile = prevProps.currentFile.id !== this.props.currentFile.id;
+    const addedFile = prevProps.files.length < this.props.files.length;
+    const removedFile = prevProps.files.length > this.props.files.length;
+    if (addedFile || (!removedFile && changedCurrentFile)) {
+      this.state.player.play();
+    }
+  }
+
+  render() {
+    const {downloadLink, image, fileName} = this.props.currentFile;
+    return (
+        <div style={{width: "50%"}}>
+          <ReactJwPlayer
+              file={downloadLink}
+              playerId={this.state.playerId}
+              image={image}
+              onReady={this.onReady}
+              playerScript="https://cdn.jwplayer.com/libraries/MD5Zj5Ca.js"
+          />
+          <h2>{fileName}</h2>
+        </div>
+    )
+  }
+}
+
+const mapStateToProps = ({currentFile, files}) => ({currentFile, files});
 export default connect(mapStateToProps)(Player);
