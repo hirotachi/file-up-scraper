@@ -17,4 +17,4 @@ export const startFetchLink = (link) => {
 
 
 const addFile = (file) => ({type: "ADD_FILE", file});
-const removeFile = (id) => ({type: "REMOVE_FILE", id});
+export const removeFile = (data) => ({type: "REMOVE_FILE", data});
