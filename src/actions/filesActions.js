@@ -8,6 +8,7 @@ export const startFetchLink = (link) => {
         .then(({data}) => {
           let {file: downloadLink, image, fileType, fileName, duration} = data;
           duration = `${Math.floor(duration / 60)}:${duration % 60}`;
+          fileName = fileName.replace(fileType, "").trim();
           dispatch(addFile({id: idGen(), link, downloadLink, fileName, fileType, image, duration}));
         })
         .catch(err => console.log(err));

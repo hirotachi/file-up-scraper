@@ -3,7 +3,7 @@ import idGen from "../extra/idGen";
 export const filesDefaultState = [
   {
     id: idGen(),
-    link: "https://www.file-up.org/9u0hizd0j8kt",
+    link: "https://www.file-up.org/s",
     downloadLink: "https://f10.file-upload.com:183/d/rqxez7gpnlgpv7w7kkzn4ailzves3ih2kjpsft3o2e4fmcclanyzxjoue2wqee6ccjm7ur5j/video.mp4",
     image: "https://f10.file-upload.com/i/01060/9u0hizd0j8kt.jpg",
     duration: "23:55",

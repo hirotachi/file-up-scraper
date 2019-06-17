@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import ReactJwPlayer from "react-jw-player";
 import idGen from "../extra/idGen";
@@ -10,6 +10,11 @@ const Player = (props) => {
   const onReady = () => {
     player = window.jwplayer(playerId);
   };
+  useEffect(() => {
+    if (player) {
+      player.play();
+    }
+  });
   return (
       <div style={{width: "50%", height: "50%"}}>
         react player

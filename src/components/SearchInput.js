@@ -11,9 +11,12 @@ const SearchInput = (props) => {
     e.preventDefault();
     const url = link.value.trim();
     const exists = props.files.find(file => file.link === url);
-
     props.dispatch(exists ? setCurrentFile(exists) : startFetchLink(url));
     reset();
+  };
+  const test = () => {
+    const link = "https://www.file-up.org/r7v381tggij9";
+    props.dispatch(startFetchLink(link));
   };
   return (
       <div>
@@ -21,6 +24,7 @@ const SearchInput = (props) => {
           <input {...link} type="text" placeholder="link to fetch"/>
           <button>fetch</button>
         </form>
+        <button onClick={test}>test</button>
       </div>
   )
 };
