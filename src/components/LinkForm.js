@@ -1,5 +1,7 @@
 import React from "react";
 import InputHandler from "../costumHooks/inputHandler";
+import layoutChangeHandler from "../costumHooks/layoutChangeHandler";
+import Request from "../icons/Request";
 
 const LinkForm = (props) => {
   const {reset, ...input} = InputHandler(props.value);
@@ -11,7 +13,12 @@ const LinkForm = (props) => {
   return (
       <form onSubmit={handleSubmit}>
         <input placeholder={placeholder} {...input} type="text"/>
-        <button>{props.button}</button>
+        {
+          props.mobileChange ?
+              (layoutChangeHandler("mobile") ? <Request/> : <button>{props.button}</button>)
+              :
+              <button>{props.button}</button>
+        }
       </form>
   )
 };

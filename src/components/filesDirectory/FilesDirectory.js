@@ -11,7 +11,6 @@ const FilesDirectory = (props) => {
   let files = searchSelection(props.files, search.value);
   return (
       <div>
-        files directory
         <FileSearch search={search}/>
         {
           files.length === 0 ?

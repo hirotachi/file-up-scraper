@@ -1,0 +1,76 @@
+//fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700");
+
+$font-primary: "Montserrat", sans-serif;
+
+// colors
+$primary-color: #384567;
+$secondary-color: #3BB6B6;
+$tritiary-color: #2AD4D4;
+
+$white: #ffffff;
+$black: #000000;
+
+$primary-grey: #282F48;
+
+
+// breakpoints
+
+$desktop-bp: 1024px;
+$tablet-bp: 769px;
+$mobileS-bp: 320px;
+$mobileM-bp: 375px;
+$mobileL-bp: 480px;
+$mobileVL-bp: 815px;
+$landscape-bp: 800px;
+$tabletHigh: 1000px;
+
+
+@mixin mobileLandscape {
+  @media (min-width: $mobileL-bp) and (max-width: $mobileVL-bp) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet-bp) and (min-width: $mobileL-bp) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $tablet-bp) {
+    @content;
+  }
+}
+
+@mixin minMobile {
+  @media (min-width: $mobileL-bp) {
+    @content;
+  }
+}
+
+@mixin desktopHigh {
+  @media (min-width: $desktop-bp) {
+    @content;
+  }
+}
+
+//mixins
+@mixin minMobileHeight {
+  @media (min-height: $mobileHeight) and (max-width: $mobileL-bp) {
+    @content;
+  }
+}
+
+@mixin maxMobileHeight {
+  @media (max-height: $mobileHeight) and (max-width: $mobileL-bp) {
+    @content;
+  }
+}
+
+@mixin tabletHigh {
+  @media (min-height: $tabletHigh) and (min-width: $desktop-bp) {
+    @content;
+  }
+}

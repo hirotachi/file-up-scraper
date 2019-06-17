@@ -5,11 +5,12 @@ import {setCurrentFile} from "../actions/currentFileActions";
 import LinkForm from "./LinkForm";
 
 
-const SearchInput = (props) => {
+const FetchLinkInput = (props) => {
   const [error, setError] = useState("");
-  const handleFormSubmit = (link) => {
+  const handleFormSubmit = (link, reset) => {
     const exists = props.files.find(file => file.link === link);
     props.dispatch(exists ? setCurrentFile(exists) : startFetchLink(link, setError));
+    reset();
   };
   useEffect(() => {
     let timeout;
@@ -25,6 +26,7 @@ const SearchInput = (props) => {
         }
         <LinkForm
             button="fetch"
+            mobileChange={true}
             value={""}
             handleSubmit={handleFormSubmit}
             placeholder="your file-up link"
@@ -33,4 +35,4 @@ const SearchInput = (props) => {
   )
 };
 const mapStateToProps = (state) => ({files: state.files});
-export default connect(mapStateToProps)(SearchInput);
+export default connect(mapStateToProps)(FetchLinkInput);

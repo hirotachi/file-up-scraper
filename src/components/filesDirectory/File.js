@@ -4,6 +4,7 @@ import FileControls from "./FileControls";
 import {setCurrentFile} from "../../actions/currentFileActions";
 import {removeFile, startUpdateFile} from "../../actions/filesActions";
 import LinkForm from "../LinkForm";
+import VerifySign from "../../icons/VerifySign";
 
 
 const File = (props) => {
@@ -41,6 +42,7 @@ const File = (props) => {
             }
           </div>
           <div>
+            <VerifySign/>
             status: {valid ? "online" : "offline"}
           </div>
           <div>
