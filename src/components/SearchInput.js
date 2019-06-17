@@ -1,29 +1,38 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {connect} from "react-redux";
-import InputHandler from "../costumHooks/inputHandler";
 import {startFetchLink} from "../actions/filesActions";
 import {setCurrentFile} from "../actions/currentFileActions";
+import LinkForm from "./LinkForm";
 
 
 const SearchInput = (props) => {
-  const {reset, ...link} = InputHandler("");
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const url = link.value.trim();
-    const exists = props.files.find(file => file.link === url);
-    props.dispatch(exists ? setCurrentFile(exists) : startFetchLink(url));
-    reset();
+  const [error, setError] = useState("");
+  const handleFormSubmit = (link) => {
+    const exists = props.files.find(file => file.link === link);
+    props.dispatch(exists ? setCurrentFile(exists) : startFetchLink(link, setError));
   };
   const test = () => {
     const link = "https://www.file-up.org/r7v381tggij9";
-    props.dispatch(startFetchLink(link));
+    props.dispatch(startFetchLink(link, setError));
   };
+  useEffect(() => {
+    let timeout;
+    if (error) {
+      setTimeout(() => setError(""), 3000);
+    }
+    return () => clearTimeout(timeout);
+  });
   return (
       <div>
-        <form onSubmit={handleFormSubmit}>
-          <input {...link} type="text" placeholder="link to fetch"/>
-          <button>fetch</button>
-        </form>
+        {
+          error && <p>{error}</p>
+        }
+        <LinkForm
+            button="fetch"
+            value={""}
+            handleSubmit={handleFormSubmit}
+            placeholder="your file-up link"
+        />
         <button onClick={test}>test</button>
       </div>
   )

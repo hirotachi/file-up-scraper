@@ -17,6 +17,8 @@ export default (state = filesDefaultState, action) => {
         return file;
       });
       return saveLocally(state);
+    case "UPDATE_FILES":
+      return action.files;
     default:
       return state
   }

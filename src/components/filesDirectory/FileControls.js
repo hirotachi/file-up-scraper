@@ -1,7 +1,7 @@
 import React from "react";
 
 const FileControls = (props) => {
-  const {selectFile, fileName, downloadLink, handleRemoveFile} = props;
+  const {selectFile, fileName, downloadLink, handleRemoveFile, toggleEdit} = props;
   let href = downloadLink.replace("/video", `/${fileName.replace(/\s/g, "-")}`);
   const handleDownload = () => {
     let link = document.createElement("a");
@@ -15,7 +15,7 @@ const FileControls = (props) => {
       <div>
         <button onClick={handleDownload}>download</button>
         <button onClick={selectFile}>play</button>
-        <button>edit</button>
+        <button onClick={toggleEdit}>edit</button>
         <button onClick={handleRemoveFile}>remove</button>
       </div>
   )
