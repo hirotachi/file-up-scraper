@@ -3,7 +3,7 @@ import React from "react";
 
 const Search = (props) => {
   return (
-      <svg className={props.style || "icon"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.328 110.328">
+      <svg className={props.iconStyle || "icon"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.328 110.328">
         <g id="Group_68" data-name="Group 68" transform="translate(-33 -150)">
           <circle id="search-icon" cx="48" cy="48" r="48" transform="translate(35 152)" fill="none" stroke="#040404"
                   strokeWidth="4"/>

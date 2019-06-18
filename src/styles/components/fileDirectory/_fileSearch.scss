@@ -1,0 +1,39 @@
+.fileSearch {
+  min-height: 4rem;
+  margin: 1rem 0;
+  display: flex;
+
+  &_input {
+    padding: 1rem .5rem;
+    border: 1px solid rgba($primary-color, .2);
+    flex: 1;
+    opacity: 0;
+    @include prefix(animation, fadeIn .5s .5s forwards);
+  }
+
+  &_btn {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+
+    &-icon {
+      fill: black;
+      width: 2rem;
+    }
+  }
+}
+
+.active {
+  &_btn {
+
+  }
+}
+
+
+@keyFrames fadeIn {
+  to {
+    opacity: 1;
+  }
+}

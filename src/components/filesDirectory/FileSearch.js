@@ -1,28 +1,21 @@
 import React, {useState} from "react";
 import Search from "../../icons/Search";
-import Close from "../../icons/Close";
 
 const FileSearch = ({search}) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   const toggleShow = () => setShow(!show);
   return (
-      <div>
+      <div className="fileSearch" style={{}}>
         {
-          show ?
-              <React.Fragment>
-                <input
-                    placeholder='link or file name'
-                    {...search} type="text"
-                />
-                <span onClick={toggleShow}>
-                  <Close/>
-                </span>
-              </React.Fragment> :
-              <button onClick={toggleShow}>
-                <Search/>
-              </button>
+          show && <input
+              className="fileSearch_input"
+              placeholder='link or file name'
+              {...search} type="text"
+          />
         }
+        <span className={`fileSearch_btn ${show ? "active_icon" : ""}`} onClick={toggleShow}><Search
+            iconStyle="fileSearch_btn-icon"/></span>
       </div>
   );
 };
