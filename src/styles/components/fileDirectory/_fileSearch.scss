@@ -9,7 +9,7 @@
   }
   @include desktopHigh {
     width: 30%;
-    margin-right: 10%;
+    margin-right: 20%;
   }
 
   &_input {
@@ -42,6 +42,10 @@
 .active {
   &_btn {
     border: none;
+  }
+
+  &_title {
+    color: #28AFB0;
   }
 }
 

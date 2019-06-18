@@ -17,7 +17,7 @@ const LinkForm = (props) => {
           props.mobileChange ?
               (layoutChangeHandler("mobile") ?
                   <span className={buttonClassName} onClick={handleSubmit}>
-                    <Request style="searchInput_add"/>
+                    <Request iconStyle="searchInput_add"/>
                   </span> :
                   <button className={buttonClassName}>{props.button}</button>)
               :

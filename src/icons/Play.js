@@ -2,7 +2,7 @@ import React from "react";
 
 const Play = (props) => {
   return (
-      <svg className={props.style || "icon"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.93 74.82">
+      <svg className={props.iconStyle || "icon"} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.93 74.82">
         <title>play-icon</title>
         <g id="Layer_2" data-name="Layer 2">
           <g id="Layer_1-2" data-name="Layer 1">

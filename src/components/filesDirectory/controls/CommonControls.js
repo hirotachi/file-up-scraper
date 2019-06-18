@@ -7,11 +7,11 @@ import Trash from "../../../icons/Trash";
 const CommonControls = (props) => {
   const {play, remove, download, edit} = props;
   return (
-      <div>
-        <span onClick={download}><Download/></span>
-        <span onClick={play}><Play/></span>
-        <span onClick={edit}><Edit/></span>
-        <span onClick={remove}><Trash/></span>
+      <div className="commonControls">
+        <span title="download" onClick={download}><Download/></span>
+        <span title="play" onClick={play}><Play/></span>
+        <span title="edit" onClick={edit}><Edit/></span>
+        <span title="remove" onClick={remove}><Trash/></span>
       </div>
   );
 };

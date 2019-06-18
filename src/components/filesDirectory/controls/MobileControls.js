@@ -19,17 +19,17 @@ const MobileControls = (props) => {
     }
   };
   return (
-      <div>
+      <div className="mobileControls">
         {
-          show ?
-              <div ref={menu}>
-                <span onClick={download}>Download</span>
-                <span onClick={play}>Play</span>
-                <span onClick={edit}>Edit</span>
-                <span onClick={remove}>Remove</span>
-              </div> :
-              <span onClick={toggleControlsMenu}><ShowMore/></span>
+          show &&
+          <div ref={menu} className="mobileControls_menu">
+            <span onClick={download}>Download</span>
+            <span onClick={play}>Play</span>
+            <span onClick={edit}>Edit</span>
+            <span onClick={remove}>Remove</span>
+          </div>
         }
+        <span onClick={toggleControlsMenu}><ShowMore/></span>
       </div>
   );
 };

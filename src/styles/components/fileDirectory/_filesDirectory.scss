@@ -1,0 +1,14 @@
+.filesDirectory {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  @include minMobile {
+    padding: 0 2rem;
+  }
+  @include desktopHigh {
+    width: 60%;
+    margin: 3rem auto 0;
+  }
+}
+
+

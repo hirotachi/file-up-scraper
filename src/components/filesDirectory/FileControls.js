@@ -16,9 +16,9 @@ const FileControls = (props) => {
   };
   const controls = {play: selectFile, download: handleDownload, remove: handleRemoveFile, edit: toggleEdit};
   return (
-      <div>
+      <div className="fileControls">
         {
-          layoutChangeHandler("mobile") ?
+          layoutChangeHandler("mobile", "mobile-landscape") ?
               <MobileControls {...controls} /> : <CommonControls {...controls}/>
         }
       </div>

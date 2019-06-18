@@ -1,0 +1,115 @@
+$image-width-mobile: 45%;
+.file {
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  &_image {
+    position: relative;
+    width: $image-width-mobile;
+    flex-basis: 50%;
+    cursor: pointer;
+    @include minMobile {
+      flex-basis: 30%;
+    }
+    @include desktopHigh {
+      flex-basis: 30%;
+    }
+    @include mobileLandscape {
+      flex-basis: 32%;
+    }
+
+    &-preview {
+      width: 100%;
+    }
+
+    &-duration {
+      background-color: rgba(#181818, .6);
+      color: $white;
+      padding: .3rem;
+      position: absolute;
+      bottom: $image-width-mobile / 10;
+      right: 1%;
+      border-radius: 3px;
+      font-size: 1.3rem;
+      @include tablet {
+        bottom: $image-width-mobile / 10;
+      }
+    }
+  }
+
+  &_data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem .5rem;
+
+    &-name {
+      font-weight: bold;
+      font-size: 1.2rem;
+      cursor: pointer;
+      @include minMobile {
+        font-size: 1.6rem;
+      }
+    }
+
+    &-link {
+      font-size: 1.2rem;
+      opacity: .8;
+      margin-top: auto;
+      @include prefix(transition, color .5s ease-in-out);
+      color: #181818;
+      @include minMobile {
+        margin: 1rem 0;
+      }
+    }
+
+    &-status {
+      font-size: 1.3rem;
+      margin-top: auto;
+      @include minMobile {
+        margin: auto 0;
+      }
+    }
+
+    &-type {
+      font-size: 1.2rem;
+      margin-top: .7rem;
+      @include minMobile {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+  }
+
+  &_edit {
+    &-input {
+      flex: 1;
+      padding: 1rem;
+      letter-spacing: 1px;
+      border: 1px solid rgba($black, .2);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-btn {
+      padding: 1rem;
+      border: none;
+      background-color: $primary-color;
+      color: $white;
+      letter-spacing: 3px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

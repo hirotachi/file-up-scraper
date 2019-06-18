@@ -4,7 +4,8 @@ import FileControls from "./FileControls";
 import {setCurrentFile} from "../../actions/currentFileActions";
 import {removeFile, startUpdateFile} from "../../actions/filesActions";
 import LinkForm from "../LinkForm";
-import VerifySign from "../../icons/VerifySign";
+import layoutChangeHandler from "../../costumHooks/layoutChangeHandler";
+import breakPoints from "../../extra/breakPoints";
 
 
 const File = (props) => {
@@ -19,41 +20,51 @@ const File = (props) => {
     toggleEdit();
   };
   return (
-      <div style={{border: "1px solid black"}}>
-        <div>
-          <div onClick={handleSelectFile}>
-            <img src={image} alt="file" style={{width: "200px"}}/>
-            <span>duration{duration}</span>
+      <div className="file">
+        {
+          !edit && !breakPoints("mobile") &&
+          <div onClick={handleSelectFile} className="file_image">
+            <img className="file_image-preview" src={image} alt="preview"/>
+            <span className="file_image-duration">{duration}</span>
           </div>
-          <div>
-            {
-              edit ?
-                  <LinkForm
-                      button="save"
-                      value={link}
-                      handleSubmit={handleSaveEdit}
-                      placeholder="your file-up link"
-                  /> :
-                  <React.Fragment>
-                    <h3 onClick={handleSelectFile}
-                        style={{color: props.currentFile.id === id ? "green" : "black"}}>{fileName}</h3>
-                    <span>{link}</span>
-                  </React.Fragment>
-            }
-          </div>
-          <div>
+        }
+        <div className="file_data">
+          {
+            edit ?
+                <LinkForm
+                    button="save"
+                    value={link}
+                    handleSubmit={handleSaveEdit}
+                    placeholder="your file-up link"
+                    inputClassName="file_edit-input"
+                    buttonClassName={"file_edit-btn"}
+                /> :
+                <React.Fragment>
+                  <p className={`file_data-name ${props.currentFile.id === id ? "active_title" : ""}`}
+                     onClick={handleSelectFile}>{fileName}</p>
 
-            {valid ? <span><VerifySign/> online</span> : "offline"}
-          </div>
-          <div>
-            <span>{fileType}</span>
-          </div>
+                  <span className="file_data-link">{link}</span>
+                </React.Fragment>
+          }
+          {
+            !layoutChangeHandler("mobile") && !edit &&
+            (valid ? <span className="file_data-status"> online</span> : "offline")
+          }
+          {
+            !edit && !breakPoints("mobile") &&
+            <span className="file_data-type">{fileType}</span>
+          }
+        </div>
+        <div>
+        </div>
+        {
+          !edit && !breakPoints("mobile") &&
           <FileControls
               toggleEdit={toggleEdit}
               handleRemoveFile={handleRemoveFile}
               selectFile={handleSelectFile} {...props}
           />
-        </div>
+        }
       </div>
   );
 };

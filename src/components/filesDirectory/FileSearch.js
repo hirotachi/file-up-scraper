@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Search from "../../icons/Search";
 
 const FileSearch = ({search}) => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const toggleShow = () => setShow(!show);
   return (
