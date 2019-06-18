@@ -22,7 +22,7 @@ const FetchLinkInput = (props) => {
   });
   return (
       <div className="searchInput">
-        <p className={`searchInput_error ${error ? "show" : ""}`}>{error}</p>
+        <p className={`searchInput_error`} style={{opacity: error ? 1 : 0}}>{error}</p>
         <LinkForm
             button="fetch"
             mobileChange={true}

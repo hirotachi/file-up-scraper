@@ -30,7 +30,7 @@ class Player extends Component {
   render() {
     const {downloadLink, image, fileName} = this.props.currentFile;
     return (
-        <div style={{width: "50%"}}>
+        <div className="player">
           <ReactJwPlayer
               file={downloadLink}
               playerId={this.state.playerId}
@@ -38,7 +38,7 @@ class Player extends Component {
               onReady={this.onReady}
               playerScript="https://cdn.jwplayer.com/libraries/MD5Zj5Ca.js"
           />
-          <h2>{fileName}</h2>
+          <h2 className="player_title">{fileName}</h2>
         </div>
     )
   }

@@ -1,0 +1,17 @@
+.player {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  @include minMobile {
+    width: 90%;
+    margin: 4rem auto;
+  }
+  @include desktopHigh {
+    width: 60%;
+  }
+
+  &_title {
+    margin-top: 2rem;
+    font-size: 2rem;
+    padding-left: 2rem;
+  }
+}
