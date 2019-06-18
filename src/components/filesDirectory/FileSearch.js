@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Search from "../../icons/Search";
+import Close from "../../icons/Close";
 
 const FileSearch = ({search}) => {
   const [show, setShow] = useState(false);
@@ -14,7 +15,9 @@ const FileSearch = ({search}) => {
                     placeholder='link or file name'
                     {...search} type="text"
                 />
-                <button onClick={toggleShow}>close</button>
+                <span onClick={toggleShow}>
+                  <Close/>
+                </span>
               </React.Fragment> :
               <button onClick={toggleShow}>
                 <Search/>

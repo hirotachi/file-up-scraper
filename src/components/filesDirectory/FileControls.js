@@ -1,9 +1,7 @@
 import React from "react";
-import Trash from "../../icons/Trash";
-import Play from "../../icons/Play";
-import Download from "../../icons/Download";
-import ShowMore from "../../icons/ShowMore";
-import Pencil from "../../icons/Pencil";
+import layoutChangeHandler from "../../costumHooks/layoutChangeHandler";
+import MobileControls from "./controls/MobileControls";
+import CommonControls from "./controls/CommonControls";
 
 const FileControls = (props) => {
   const {selectFile, fileName, downloadLink, handleRemoveFile, toggleEdit} = props;
@@ -16,18 +14,13 @@ const FileControls = (props) => {
     link.rel = "noopener noreferrer";
     link.click();
   };
-
+  const controls = {play: selectFile, download: handleDownload, remove: handleRemoveFile, edit: toggleEdit};
   return (
       <div>
-        <Trash/>
-        <Play/>
-        <Download/>
-        <Pencil/>
-        <button onClick={handleDownload}>download</button>
-        <button onClick={selectFile}>play</button>
-        <button onClick={toggleEdit}>edit</button>
-        <button onClick={handleRemoveFile}>remove</button>
-        <ShowMore/>
+        {
+          layoutChangeHandler("mobile") ?
+              <MobileControls {...controls} /> : <CommonControls {...controls}/>
+        }
       </div>
   )
 };
