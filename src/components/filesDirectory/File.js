@@ -5,7 +5,6 @@ import {setCurrentFile} from "../../actions/currentFileActions";
 import {removeFile, startUpdateFile} from "../../actions/filesActions";
 import LinkForm from "../LinkForm";
 import layoutChangeHandler from "../../costumHooks/layoutChangeHandler";
-import breakPoints from "../../extra/breakPoints";
 
 
 const File = (props) => {
@@ -22,7 +21,7 @@ const File = (props) => {
   return (
       <div className="file">
         {
-          !edit && !breakPoints("mobile") &&
+          !edit &&
           <div onClick={handleSelectFile} className="file_image">
             <img className="file_image-preview" src={image} alt="preview"/>
             <span className="file_image-duration">{duration}</span>
@@ -51,14 +50,14 @@ const File = (props) => {
             (valid ? <span className="file_data-status"> online</span> : "offline")
           }
           {
-            !edit && !breakPoints("mobile") &&
+            !edit &&
             <span className="file_data-type">{fileType}</span>
           }
         </div>
         <div>
         </div>
         {
-          !edit && !breakPoints("mobile") &&
+          !edit &&
           <FileControls
               toggleEdit={toggleEdit}
               handleRemoveFile={handleRemoveFile}

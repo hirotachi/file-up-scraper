@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f55156d-6d3f-4a3e-bb4d-40e9a569873c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LinkForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LinkForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/filesDirectory/File.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filesDirectory/File.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filesDirectory/FileControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filesDirectory/FileControls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filesDirectory/FileSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filesDirectory/FileSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filesDirectory/FilesDirectory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filesDirectory/FilesDirectory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filesDirectory/controls/CommonControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filesDirectory/controls/CommonControls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filesDirectory/controls/MobileControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filesDirectory/controls/MobileControls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/costumHooks/layoutChangeHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/costumHooks/layoutChangeHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extra/breakPoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/extra/breakPoints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/Close.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/Close.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/Download.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/Download.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/Edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/Play.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/Play.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/Request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/Request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/ShowMore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/ShowMore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/Trash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/Trash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/base/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/base/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/base/_settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/base/_settings.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_fetchLinkInput.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_fetchLinkInput.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/fileDirectory/_fileSearch.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/fileDirectory/_fileSearch.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/fileDirectory/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/fileDirectory/_index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,14 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/filesDirectory/File.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -70,15 +44,6 @@
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/styles/components/_fetchLinkInput.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -140,8 +105,8 @@
         <option value="$PROJECT_DIR$/src/components/filesDirectory/controls/CommonControls.js" />
         <option value="$PROJECT_DIR$/src/icons/Edit.js" />
         <option value="$PROJECT_DIR$/src/styles/components/fileDirectory/_file.scss" />
-        <option value="$PROJECT_DIR$/src/components/filesDirectory/File.js" />
         <option value="$PROJECT_DIR$/src/styles/components/_fetchLinkInput.scss" />
+        <option value="$PROJECT_DIR$/src/components/filesDirectory/File.js" />
       </list>
     </option>
   </component>
@@ -293,12 +258,12 @@
       <workItem from="1560705106608" duration="11014000" />
       <workItem from="1560755232452" duration="35307000" />
       <workItem from="1560854012962" duration="15610000" />
-      <workItem from="1560874870186" duration="12174000" />
+      <workItem from="1560874870186" duration="12446000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83204000" />
+    <option name="totallyTimeSpent" value="83476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -644,20 +609,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/filesDirectory/File.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/components/fileDirectory/_file.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/components/_fetchLinkInput.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -671,10 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/components/_fetchLinkInput.scss">
+    <entry file="file://$PROJECT_DIR$/src/components/filesDirectory/File.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        <state relative-caret-position="288">
+          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
         </state>
       </provider>
     </entry>
