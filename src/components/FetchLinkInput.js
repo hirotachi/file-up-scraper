@@ -8,28 +8,29 @@ import LinkForm from "./LinkForm";
 const FetchLinkInput = (props) => {
   const [error, setError] = useState("");
   const handleFormSubmit = (link, reset) => {
-    const exists = props.files.find(file => file.link === link);
-    props.dispatch(exists ? setCurrentFile(exists) : startFetchLink(link, setError));
-    reset();
+    if (!link) {
+      setError("Please provide a link first");
+    } else {
+      const exists = props.files.find(file => file.link === link);
+      props.dispatch(exists ? setCurrentFile(exists) : startFetchLink(link, setError, reset));
+      if (exists) reset();
+    }
   };
   useEffect(() => {
-    let timeout;
-    if (error) {
-      timeout = setTimeout(() => setError(""), 3000);
-    }
+    let timeout = error && setTimeout(() => setError(""), 3000);
     return () => clearTimeout(timeout);
   });
   return (
-      <div>
-        {
-          error && <p>{error}</p>
-        }
+      <div className="searchInput">
+        <p className={`searchInput_error ${error ? "show" : ""}`}>{error}</p>
         <LinkForm
             button="fetch"
             mobileChange={true}
             value={""}
             handleSubmit={handleFormSubmit}
             placeholder="your file-up link"
+            inputClassName="searchInput_input"
+            buttonClassName="searchInput_btn"
         />
       </div>
   )

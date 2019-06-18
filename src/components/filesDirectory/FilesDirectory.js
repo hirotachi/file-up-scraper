@@ -15,7 +15,7 @@ const FilesDirectory = (props) => {
         {
           files.length === 0 ?
               <p>add files first</p> :
-              files.map(file => <File key={idGen()} {...file}/>)
+              files.reverse().map(file => <File key={idGen()} {...file}/>)
         }
       </div>
   );

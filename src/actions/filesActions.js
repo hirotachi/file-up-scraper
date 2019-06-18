@@ -13,11 +13,12 @@ const fetchData = async (link) => {
       })
 };
 
-export const startFetchLink = (link, setError) => {
+export const startFetchLink = (link, setError, resetInput) => {
   return dispatch => {
     fetchData(link)
         .then((data) => {
           dispatch(addFile({id: idGen(), ...data, valid: true}));
+          resetInput();
         })
         .catch(err => setError("Invalid link try again"));
   }

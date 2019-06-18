@@ -42,8 +42,8 @@ const File = (props) => {
             }
           </div>
           <div>
-            <VerifySign/>
-            status: {valid ? "online" : "offline"}
+
+            {valid ? <span><VerifySign/> online</span> : "offline"}
           </div>
           <div>
             <span>{fileType}</span>
