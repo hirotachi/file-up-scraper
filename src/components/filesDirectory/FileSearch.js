@@ -14,7 +14,7 @@ const FileSearch = ({search}) => {
               {...search} type="text"
           />
         }
-        <span className={`fileSearch_btn ${show ? "active_icon" : ""}`} onClick={toggleShow}><Search
+        <span className={`fileSearch_btn ${show ? "active_btn" : ""}`} onClick={toggleShow}><Search
             iconStyle="fileSearch_btn-icon"/></span>
       </div>
   );

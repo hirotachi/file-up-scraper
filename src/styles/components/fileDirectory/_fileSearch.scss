@@ -2,13 +2,23 @@
   min-height: 4rem;
   margin: 1rem 0;
   display: flex;
+  padding: 0 1rem;
+  @include minMobile {
+    width: 50%;
+    margin-left: auto;
+  }
+  @include desktopHigh {
+    width: 30%;
+    margin-right: 10%;
+  }
 
   &_input {
-    padding: 1rem .5rem;
+    padding: 1rem;
     border: 1px solid rgba($primary-color, .2);
     flex: 1;
     opacity: 0;
-    @include prefix(animation, fadeIn .5s .5s forwards);
+    border-radius: 5px;
+    @include prefix(animation, fadeIn .5s .2s forwards);
   }
 
   &_btn {
@@ -17,6 +27,10 @@
     align-items: center;
     justify-content: center;
     width: 10%;
+    cursor: pointer;
+    border: 1px solid rgba($primary-color, .2);
+    @include prefix(transition, all .3s linear);
+    border-radius: 5px;
 
     &-icon {
       fill: black;
@@ -27,7 +41,7 @@
 
 .active {
   &_btn {
-
+    border: none;
   }
 }
 
