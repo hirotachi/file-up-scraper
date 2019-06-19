@@ -8,10 +8,6 @@ class Player extends Component {
     playerId: idGen(),
     player: ""
   };
-  onReady = () => {
-    const player = window.jwplayer(this.state.playerId);
-    this.setState({player: player});
-  };
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     return this.props.currentFile !== nextProps.currentFile ||
@@ -19,11 +15,16 @@ class Player extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const changedCurrentFile = prevProps.currentFile.id !== this.props.currentFile.id;
-    const addedFile = prevProps.files.length < this.props.files.length;
-    const removedFile = prevProps.files.length > this.props.files.length;
-    if (addedFile || (!removedFile && changedCurrentFile)) {
-      this.state.player.play();
+
+    let player = window.jwplayer;
+    if (player) {
+      player = player(this.state.playerId);
+      const changedCurrentFile = prevProps.currentFile.id !== this.props.currentFile.id;
+      const addedFile = prevProps.files.length < this.props.files.length;
+      const removedFile = prevProps.files.length > this.props.files.length;
+      if (addedFile || (!removedFile && changedCurrentFile)) {
+        player.play();
+      }
     }
   }
 
