@@ -6,7 +6,6 @@ import idGen from "../extra/idGen";
 class Player extends Component {
   state = {
     playerId: idGen(),
-    player: ""
   };
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {

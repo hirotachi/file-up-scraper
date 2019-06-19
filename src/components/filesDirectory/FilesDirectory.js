@@ -11,11 +11,13 @@ const FilesDirectory = (props) => {
   let files = searchSelection(props.files, search.value);
   return (
       <React.Fragment>
-        <FileSearch search={search}/>
+        {
+          props.files.length > 0 && <FileSearch search={search}/>
+        }
 
         {
           files.length === 0 ?
-              <p>add files first</p> :
+              <p className="filesDirectory_placeholder">add files first</p> :
               <div className="filesDirectory">
                 {
                   files.reverse().map(file => <File key={idGen()} {...file}/>)
